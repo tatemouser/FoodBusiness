@@ -1,7 +1,11 @@
-body, html {
+body {
     margin: 0;
     padding: 0;
     background-color: white;
+}
+body {
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 main {
@@ -43,34 +47,167 @@ header {
     transition: background-color 0.3s;
 }
 
-.contact-container, .big-text-container, .img-text-container, .about-container, .mission-container {
+.title-container, .contact-container, .big-text-container, .img-text-container, .about-container, .mission-container {
     padding: 50px 20px;
     text-align: center;
 }
 
 /*---------contact----------*/
+.title-container {
+    background-color: purple;
+}
+
 .contact-container {
     background-color: red;
+    color: white;
 }
+
+.contact-container button {
+    border: 2px solid white;
+    border-radius: 12px; /* Adjust the radius for more or less rounding */
+    background-color: transparent;
+    padding: 10px 20px; /* Adjust padding for size */
+    font-size: 16px; /* Adjust font size */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    color: white;
+}
+
+.contact-container button:hover {
+    background-color: white; /* Slight background change on hover */
+    color: black; /* Adjust hover text color if needed */
+}
+
 /*---------big text----------*/
 .big-text-container {
     background-color: blue;
+    padding: 0;
+    margin: 0;
+    font-size: 2vw;
 }
+
+.big-text-container h1 {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    line-height: 1.2; /* Adjust line-height to reduce space between the lines */
+    font-weight: 1000;
+}
+
 /*---------image-text----------*/
 .img-text-container {
     background-color: yellow;
+    padding: 0;
+    margin: 0;
+    font-size: 2vw;
 }
+.img-text-container h1 {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    line-height: 1.2; /* Adjust line-height to reduce space between the lines */
+    font-weight: 100;
+}
+
 /*---------about----------*/
 .about-container {
     background-color: green;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 auto;
 }
+
+.left-image {
+    flex: 1;
+    padding: 20px;
+    width: 50%;
+}
+
+.left-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.right-text {
+    flex: 1;
+    padding: 20px;
+}
+
 /*---------mission----------*/
 .mission-container {
     background-color: orange;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 auto;
 }
+
+.left-text {
+    flex: 1;
+    padding: 20px;
+    order: 1;
+}
+
+.right-image {
+    flex: 1;
+    padding: 20px;
+    order: 2;
+}
+
+.right-image img {
+    max-width: 100%;
+    height: auto;
+}
+
 /*---------social----------*/
 .social-container {
     background-color: pink;
+}
+
+/*------------------ FOOTER ------------------ */
+.footer-container {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+footer {
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-section {
+    flex: 1;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #555;
 }
 
 @media (max-width: 768px) {
@@ -85,5 +222,44 @@ header {
     .nav-buttons a {
         padding: 6px 10px;
         font-size: 0.8em;
+    }
+
+/*---------about----------*/
+    .about-container {
+        flex-direction: column;
+      }
+      
+      .left-image, .right-text {
+        width: 100%;
+      }
+
+      .mission-container, .reverse {
+        flex-direction: column;
+      }
+
+/*---------mission----------*/
+    .mission-container {
+        flex-direction: column;
+    }
+
+    .left-text, .right-image {
+        width: 100%;
+    }
+
+    .left-text {
+        order: 2;
+    }
+
+    .right-image {
+        order: 1;
+    }
+
+/*---------footer----------*/
+    .footer-content {
+        flex-direction: column;
+    }
+    
+    .footer-section {
+        margin-right: 0;
     }
 }
