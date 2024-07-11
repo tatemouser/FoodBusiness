@@ -79,11 +79,8 @@ header {
 }
 
 .dropbtn {
-    background-color: white;
-    color: black;
-    padding: 8px 12px;
-    font-size: 1.1rem;
-    border: none;
+    width: 30px; /* Adjust as needed */
+    height: 30px; /* Adjust as needed */
     cursor: pointer;
 }
 
@@ -95,6 +92,7 @@ header {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     right: 0;
+    top: 100%; /* Position the dropdown below the icon */
 }
 
 .dropdown-content a {
